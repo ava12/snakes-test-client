@@ -158,7 +158,7 @@ function AFight(Fields) {
 			'TurnLimit', 'Turns', 'SnakeStats', 'SlotIndex']
 		for(var i in Names) Result[Names[i]] = this[Names[i]]
 		Result.Snakes = [null, null, null, null]
-		for(i in this.Snakes) {
+		for(var i in this.Snakes) {
 			if (this.Snakes[i]) Result.Snakes[i] = this.Snakes[i].Serialize()
 		}
 		return Result
