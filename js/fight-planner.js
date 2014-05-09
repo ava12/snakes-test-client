@@ -12,7 +12,6 @@ function AFightPlanner(Fight) {
 	this.MaxTurnLimit = 1000
 
 	this.SnakeListColors = ['#f99', '#ee6', '#6e6', '#9df']
-//	this.SnakeListColors = ['#ffcccc', '#ffff99', '#ccffcc', '#ccddff']
 
 	this.TabControls = {Items: {
 		SnakeButtons: {Items: [
@@ -42,8 +41,7 @@ function AFightPlanner(Fight) {
 	this.ListItems = {
 		Skin: {x: 20, y: 47, w: 48, h: 16},
 		Name: {x: 80, y: 41, w: 415, h: 28},
-		//Change: {x: 410, y: 42, w: 100, h: 26, Color: '#ffff99', Label: 'Заменить'},
-		Remove: {x: 520, y: 42, w: 100, h: 26, Color: '#ffcccc', Label: 'Удалить'},
+		Remove: {x: 520, y: 42, w: 100, h: 26, Color: '#ffcccc', Label: 'Убрать'},
 	}
 
 
@@ -130,7 +128,7 @@ function AFightPlanner(Fight) {
 		var Html = ''
 		for(var i in Lists) {
 			var List = Lists[i]
-			Html += '<h3>' + List[1] + '</h3>\r\n<ul class="snake-list">\r\n'
+			Html += '<div class="snake-list-frame"><h3>' + List[1] + '</h3>\r\n<ul class="snake-list">\r\n'
 			var Class = List[2]
 			List = List[0]
 			for(var j in List) {
@@ -142,7 +140,7 @@ function AFightPlanner(Fight) {
 					'<span class="skin skin' + Snake.SkinId +'"></span>' +
 					Name + '</li>\r\n'
 			}
-			Html += '</ul>\r\n'
+			Html += '</ul></div>\r\n'
 		}
 
 		Canvas.RenderInputHtml(Html, '', function(Dataset, Tab) {

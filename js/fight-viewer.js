@@ -328,6 +328,14 @@ function AFightViewer(Fight) {
 	}
 
 //---------------------------------------------------------------------------
+	this.RenderSaveButton = function() {
+		var Button = this.TabControls.Items.SaveButton
+		var IsSaved = (this.Fight.SlotIndex != undefined)
+		Canvas.RenderTextButton(Button.Labels[IsSaved ? 1 : 0], Button,
+			Button.BackColors[IsSaved ? 1 : 0])
+	}
+
+//---------------------------------------------------------------------------
 	this.RenderStatic = function() {
 		var Items = this.Items
 		for(var i in Items) {
@@ -354,9 +362,8 @@ function AFightViewer(Fight) {
 		Items = this.TabControls.Items
 		Canvas.RenderSprite(Sprites.Get(Items.RunButton.Sprite), Items.RunButton.x, Items.RunButton.y)
 
-		var IsSaved = (this.Fight.SlotIndex != undefined)
-		Canvas.RenderTextButton(Items.SaveButton.Labels[IsSaved ? 1 : 0], Items.SaveButton,
-			Items.SaveButton.BackColors[IsSaved ? 1 : 0])
+		this.RenderSaveButton()
+
 		if (Items.ExportButton) {
 			Canvas.RenderTextButton(Items.ExportButton.Label, Items.ExportButton,
 				Items.ExportButton.BackColor)
@@ -561,7 +568,8 @@ function AFightViewer(Fight) {
 			case 'save':
 				if (this.Fight.SlotIndex == undefined) Game.Fights.Add(this.Fight)
 				else Game.Fights.Remove(this.Fight)
-				this.RenderStatic()
+				this.RenderSaveButton()
+				for(i = 0; i < 4; i++) this.RenderSnakeLength(i)
 			break
 		}
 	}
@@ -585,7 +593,6 @@ function AFightViewer(Fight) {
 
 		if (!window.JSON) delete this.TabControls.Items.ExportButton
 
-		////this.Fight.Turns.push(0)
 		var StartX = [12, 9, 12, 15], StartY = [15, 12, 9, 12]
 		var DeltaX = [0, -1, 0, 1], DeltaY = [1, 0, -1, 0]
 		var Snakes = this.Fight.Snakes

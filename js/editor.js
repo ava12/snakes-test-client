@@ -21,11 +21,11 @@ function ASnakeEditor(Snake) {
 			Data: {cls: 'desc', id: 'program'}, Back: false, Title: 'описание программы'},
 		Description: {x: 8, y: 268, w: 192, h: 108, Data: {cls: 'desc', id: 'map'},
 			Back: false, Title: 'описание карты'},
-		HeadButton: {x: 27, y: 391, w: 32, h: 32, Data: {cls: 'tpl', id: 'head'},
+		HeadButton: {x: 27, y: 389, w: 32, h: 32, Data: {cls: 'tpl', id: 'head'},
 			Title: 'своя голова', Sprite: '32.OwnHead'},
-		ClearButton: {x: 27, y: 427, w: 32, h: 32, Data: {cls: 'tpl', id: 'clear'},
+		ClearButton: {x: 27, y: 429, w: 32, h: 32, Data: {cls: 'tpl', id: 'clear'},
 			Title: 'очистить', Sprite: '20.Any'},
-		NotButton: {x: 328, y: 391, w: 32, h: 32, Data: {cls: 'tpl', id: 'not'},
+		NotButton: {x: 84, y: 389, w: 32, h: 32, Data: {cls: 'tpl', id: 'not'},
 			Title: 'модификатор НЕ', Sprite: '32.Not'},
 		ControlButtons: {w: 32, h: 32, y: 342, Data: {cls: 'ctl'}, Items: [
 			{x: 452, id: 'upper', Back: '32.Buttons.Back', Sprite: '16.Labels.Up', Title: 'выше'},
@@ -34,18 +34,18 @@ function ASnakeEditor(Snake) {
 			{x: 554, id: 'copy', Back: '32.Buttons.Add', Sprite: '16.Labels.Copy', Title: 'копия карты'},
 			{x: 588, id: 'del', Back: '32.Buttons.Del', Sprite: '16.Labels.Del', Title: 'удалить карту'},
 		]},
-		TemplateButtons: {y: 391, w: 32, h: 32, Data: {cls: 'tpl'},
+		TemplateButtons: {y: 389, w: 32, h: 32, Data: {cls: 'tpl'},
 			Title: 'пользовательский набор', Items: {
-				V: {x: 84, id: 'V', Title: 'пустая клетка', Sprite: '32.V'},
-				S: {x: 118, id: 'S', Title: 'свое тело', Sprite: '32.S'},
-				T: {x: 152, id: 'T', Title: 'свой хвост', Sprite: '32.T'},
-				X: {x: 186, id: 'X', Title: 'голова противника', Sprite: '32.X'},
-				Y: {x: 220, id: 'Y', Title: 'тело противника', Sprite: '32.Y'},
-				Z: {x: 254, id: 'Z', Title: 'хвост противника', Sprite: '32.Z'},
-				W: {x: 288, id: 'W', Title: 'граница поля', Sprite: '32.W'},
-				A: {x: 381, y: 391, id: 'A', Sprite: '32.A'},
+				V: {x: 124, id: 'V', Title: 'пустая клетка', Sprite: '32.V'},
+				S: {x: 158, id: 'S', Title: 'свое тело', Sprite: '32.S'},
+				T: {x: 192, id: 'T', Title: 'свой хвост', Sprite: '32.T'},
+				X: {x: 226, id: 'X', Title: 'голова противника', Sprite: '32.X'},
+				Y: {x: 260, id: 'Y', Title: 'тело противника', Sprite: '32.Y'},
+				Z: {x: 294, id: 'Z', Title: 'хвост противника', Sprite: '32.Z'},
+				W: {x: 328, id: 'W', Title: 'граница поля', Sprite: '32.W'},
+				A: {x: 381, y: 389, id: 'A', Sprite: '32.A'},
 				B: {x: 381, y: 429, id: 'B', Sprite: '32.B'},
-				C: {x: 510, y: 391, id: 'C', Sprite: '32.C'},
+				C: {x: 510, y: 389, id: 'C', Sprite: '32.C'},
 				D: {x: 510, y: 429, id: 'D', Sprite: '32.D'},
 			}
 		},
@@ -61,13 +61,13 @@ function ASnakeEditor(Snake) {
 		]},
 		UserSetButtons: {w: 16, h: 16, Data: {cls: 'set'}, Items: {
 			A: {Items: {
-				v: {x: 417, y: 391, Data: {id: 'v', usr: 'A'}, Title: 'пустая клетка', Sprite: '16.V'},
-				s: {x: 435, y: 391, Data: {id: 's', usr: 'A'}, Title: 'свое тело', Sprite: '16.S'},
-				t: {x: 453, y: 391, Data: {id: 't', usr: 'A'}, Title: 'свой хвост', Sprite: '16.T'},
-				w: {x: 471, y: 391, Data: {id: 'w', usr: 'A'}, Title: 'граница поля', Sprite: '16.W'},
-				x: {x: 417, y: 409, Data: {id: 'x', usr: 'A'}, Title: 'голова противника', Sprite: '16.X'},
-				y: {x: 435, y: 409, Data: {id: 'y', usr: 'A'}, Title: 'тело противника', Sprite: '16.Y'},
-				z: {x: 453, y: 409, Data: {id: 'z', usr: 'A'}, Title: 'хвост противника', Sprite: '16.Z'},
+				v: {x: 417, y: 389, Data: {id: 'v', usr: 'A'}, Title: 'пустая клетка', Sprite: '16.V'},
+				s: {x: 435, y: 389, Data: {id: 's', usr: 'A'}, Title: 'свое тело', Sprite: '16.S'},
+				t: {x: 453, y: 389, Data: {id: 't', usr: 'A'}, Title: 'свой хвост', Sprite: '16.T'},
+				w: {x: 471, y: 389, Data: {id: 'w', usr: 'A'}, Title: 'граница поля', Sprite: '16.W'},
+				x: {x: 417, y: 407, Data: {id: 'x', usr: 'A'}, Title: 'голова противника', Sprite: '16.X'},
+				y: {x: 435, y: 407, Data: {id: 'y', usr: 'A'}, Title: 'тело противника', Sprite: '16.Y'},
+				z: {x: 453, y: 407, Data: {id: 'z', usr: 'A'}, Title: 'хвост противника', Sprite: '16.Z'},
 			}},
 			B: {Items: {
 				v: {x: 417, y: 429, Data: {id: 'v', usr: 'B'}, Title: 'пустая клетка', Sprite: '16.V'},
@@ -79,13 +79,13 @@ function ASnakeEditor(Snake) {
 				z: {x: 453, y: 447, Data: {id: 'z', usr: 'B'}, Title: 'хвост противника', Sprite: '16.Z'},
 			}},
 			C: {Items: {
-				v: {x: 546, y: 391, Data: {id: 'v', usr: 'C'}, Title: 'пустая клетка', Sprite: '16.V'},
-				s: {x: 564, y: 391, Data: {id: 's', usr: 'C'}, Title: 'свое тело', Sprite: '16.S'},
-				t: {x: 582, y: 391, Data: {id: 't', usr: 'C'}, Title: 'свой хвост', Sprite: '16.T'},
-				w: {x: 600, y: 391, Data: {id: 'w', usr: 'C'}, Title: 'граница поля', Sprite: '16.W'},
-				x: {x: 546, y: 409, Data: {id: 'x', usr: 'C'}, Title: 'голова противника', Sprite: '16.X'},
-				y: {x: 564, y: 409, Data: {id: 'y', usr: 'C'}, Title: 'тело противника', Sprite: '16.Y'},
-				z: {x: 582, y: 409, Data: {id: 'z', usr: 'C'}, Title: 'хвост противника', Sprite: '16.Z'},
+				v: {x: 546, y: 389, Data: {id: 'v', usr: 'C'}, Title: 'пустая клетка', Sprite: '16.V'},
+				s: {x: 564, y: 389, Data: {id: 's', usr: 'C'}, Title: 'свое тело', Sprite: '16.S'},
+				t: {x: 582, y: 389, Data: {id: 't', usr: 'C'}, Title: 'свой хвост', Sprite: '16.T'},
+				w: {x: 600, y: 389, Data: {id: 'w', usr: 'C'}, Title: 'граница поля', Sprite: '16.W'},
+				x: {x: 546, y: 407, Data: {id: 'x', usr: 'C'}, Title: 'голова противника', Sprite: '16.X'},
+				y: {x: 564, y: 407, Data: {id: 'y', usr: 'C'}, Title: 'тело противника', Sprite: '16.Y'},
+				z: {x: 582, y: 407, Data: {id: 'z', usr: 'C'}, Title: 'хвост противника', Sprite: '16.Z'},
 			}},
 			D: {Items: {
 				v: {x: 546, y: 429, Data: {id: 'v', usr: 'D'}, Title: 'пустая клетка', Sprite: '16.V'},
@@ -595,10 +595,12 @@ function ASnakeEditor(Snake) {
 		var Editor = TabSet.CurrentTab
 		var Snake = Editor.Snake
 		var Text = Dataset.value
+		if (typeof Text == 'boolean') return
+
 		if (Text) Text = Text.trim()
 
 		switch(Id) {
-			case 'name':
+			case 'name': {
 				if (Text == Snake.SnakeName || Game.MySnakes.Exists(Text)) {
 					alert('Змея с таким именем уже есть')
 					return
@@ -611,14 +613,14 @@ function ASnakeEditor(Snake) {
 						Snake.SnakeName = Text
 						Game.MySnakes.Add(Snake)
 					} else {
-						Game.MySnakes.Rename(Snake, Text)
+						if (!Game.MySnakes.Rename(Snake, Text)) return
 					}
 				}
 
 				Editor.TabTitle = (Text ? Text : '<без имени>')
 				Editor.RenderSnakeName()
 				TabSet.RenderTabs()
-			break
+			break }
 
 			case 'program':
 				Editor.Snake.ProgramDescription = Text

@@ -144,8 +144,9 @@ function AFight(Fields) {
 		}
 
 		for(i in this.Snakes) {
-			if (this.Snakes[i] && !this.Snakes[i].Serialize) {
-				this.Snakes[i] = new ASnake(this.Snakes[i])
+			if (this.Snakes[i]) {
+				if (this.Snakes[i].Serialize) this.Snakes[i] = Clone(this.Snakes[i])
+				else this.Snakes[i] = new ASnake(this.Snakes[i])
 			}
 		}
 	}
