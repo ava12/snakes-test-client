@@ -72,6 +72,8 @@ function Clone(Obj) {
 
 	if (Obj.clone) return Obj.clone()
 
+	if (typeof Obj == 'function') return Obj
+
 	if (Obj instanceof Array) {
 		var Result = []
 		var Len = Obj.length
