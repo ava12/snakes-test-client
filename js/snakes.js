@@ -140,13 +140,13 @@ function AFight(Fields) {
 
 	if(Fields) {
 		for(var i in Fields) {
-			if (this[i] != undefined || i == 'SlotIndex') this[i] = Fields[i]
+			if (this[i] != undefined || i == 'SlotIndex') this[i] = Clone(Fields[i])
 		}
 
 		for(i in this.Snakes) {
 			if (this.Snakes[i]) {
-				if (this.Snakes[i].Serialize) this.Snakes[i] = Clone(this.Snakes[i])
-				else this.Snakes[i] = new ASnake(this.Snakes[i])
+				if (!this.Snakes[i].Serialize) //this.Snakes[i] = Clone(this.Snakes[i])
+				/*else*/ this.Snakes[i] = new ASnake(this.Snakes[i])
 			}
 		}
 	}

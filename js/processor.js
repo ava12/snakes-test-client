@@ -67,7 +67,7 @@ function AFightProcessor(Fight) {
 		for(var i = 0; i < 4; i++) {
 			var Snake = this.Snakes[i]
 			if (Snake) {
-				var FightSnake = this.Fight.Snakes[i]
+				//var FightSnake = this.Fight.Snakes[i]
 				this.Response.SnakeStats[i] = {
 					Status: Snake.Result,
 					FinalLength: Snake.Coords.length,

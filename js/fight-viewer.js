@@ -235,6 +235,7 @@ function AFightViewer(Fight) {
 //---------------------------------------------------------------------------
 	this.SelectStep = function() {
 		this.Step = 0
+		this.IsEating = false
 		this.Field = Clone(this.TurnField)
 		if (this.DebuggedSnakeIndex != undefined && this.Turn < this.Fight.Turns.length - 1) {
 			while(this.StepOrder[this.Step] != this.DebuggedSnakeIndex) {
@@ -246,7 +247,7 @@ function AFightViewer(Fight) {
 //---------------------------------------------------------------------------
 	this.SelectTurn = function(Index) {
 		if (Index >= this.Fight.Turns.length) Index = this.Fight.Turns.length - 1
-		if (Index < 0) return
+		if (Index < 0) Index = 0
 
 		var KeyIndex = Math.floor(Index / this.KeyFrameRate)
 		if (KeyIndex >= this.KeyFrames.length) KeyIndex = this.KeyFrames.length - 1

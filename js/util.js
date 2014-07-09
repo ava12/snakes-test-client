@@ -81,7 +81,7 @@ function Clone(Obj) {
 			Result[i] = Clone(Obj[i])
 		}
 	} else {
-		var c = Obj.constructor
+		//var c = Obj.constructor
 		var Result = {}
 		for(var i in Obj) Result[i] = Clone(Obj[i])
 		Result.prototype = Obj.prototype
